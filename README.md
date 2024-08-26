@@ -11,21 +11,27 @@
 > ## Electronics
 > - ESP32
 > - MCP2515 CAN bus module
-> Refer to [Schematics](https://github.com/KhohZongEu/Eclimo-CAN-bus-monitor/tree/main?tab=readme-ov-file#schematics) for wiring
+> 
+>Refer to [Schematics](https://github.com/KhohZongEu/Eclimo-CAN-bus-monitor/tree/main?tab=readme-ov-file#schematics) for wiring
 
 ### Implemented functions
 - Wifi Connectiviy
 - Reading canbus data
 - Sending data to [FirebaseRTDB](https://firebase.google.com/products/realtime-database)
 
+Functions are separated for easier pinpointing and debugging. 
+
 ### Sent Firebase Data Format
 Current data is stored as an array and has to be placed in a `string` as shown below:
 ```
 [1,2,3,4,5]
 ```
-Which is converted using the `formatData()` that returns a `string`
+Which is converted using the `formatData()` that returns a `string`.
 
-### Libraries used
+## Libraries
+Refer to original documentation created by the developers of libraries used.
+
+### Used Libraries
 1. [MCP_CAN_lib](https://github.com/coryjfowler/MCP_CAN_lib) by coryjfowler
 2. [FirebaseClient](https://github.com/mobizt/FirebaseClient) by mobizt
 
