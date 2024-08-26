@@ -15,12 +15,19 @@
 
 ### Implemented functions
 - Wifi Connectiviy
+- Reading canbus data
+- Sending data to [FirebaseRTDB](https://firebase.google.com/products/realtime-database)
+
+### Sent Firebase Data Format
+Current data is stored as an array and has to be placed in a `string` as shown below:
+```
+[1,2,3,4,5]
+```
+Which is converted using the `formatData()` that returns a `string`
 
 ### Libraries used
 1. [MCP_CAN_lib](https://github.com/coryjfowler/MCP_CAN_lib) by coryjfowler
 2. [FirebaseClient](https://github.com/mobizt/FirebaseClient) by mobizt
-
-
 
 ### Schematics
 ![alt text](image.png)
