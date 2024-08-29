@@ -15,13 +15,13 @@
 >Refer to [Schematics](https://github.com/KhohZongEu/Eclimo-CAN-bus-monitor/tree/main?tab=readme-ov-file#schematics) for wiring
 
 ### Implemented functions
-- Wifi Connectiviy
+- Wifi Connectivity
 - Reading canbus data
 - Sending data to [FirebaseRTDB](https://firebase.google.com/products/realtime-database)
 
 Functions are separated for easier pinpointing and debugging. 
 
-### Sent Firebase Data Format
+### Firebase Data Format
 Current data is stored as an array and has to be placed in a `string` as shown below:
 ```
 [1,2,3,4,5]
