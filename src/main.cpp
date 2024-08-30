@@ -4,10 +4,10 @@
 #include <FirebaseClient.h>
 #include <WiFiClientSecure.h>
 
-#define WIFI_SSID "YOUR_WIFI_NAME"
-#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#define WIFI_SSID "Nemo5"
+#define WIFI_PASSWORD "Nem0123456789"
 
-#define DATABASE_URL "YOUR_DATABASE_URL"
+#define DATABASE_URL "https://habit-chair-default-rtdb.asia-southeast1.firebasedatabase.app"
 
 WiFiClientSecure ssl;
 DefaultNetwork network;
@@ -46,7 +46,6 @@ void setup() {
   connectWiFi();
   firebaseInit();
   client.setAsyncResult(result);
-  
 
   // Initialize MCP2515 running at 16MHz with a baudrate of 500kb/s and the masks and filters disabled.
   if(CAN0.begin(MCP_ANY, CAN_500KBPS, MCP_8MHZ) == CAN_OK)
@@ -63,8 +62,12 @@ void setup() {
 void loop() {
   readCan();
   if (WiFi.status() == WL_CONNECTED){
-    String data = formatData();
-    uploadToFirebase(data);
+    unsigned long currentMillis = millis();
+    if (currentMillis - prevFirebaseMillis >= 5000) {
+      String data = formatData();
+      uploadToFirebase(data);
+      prevFirebaseMillis = currentMillis;
+    }
   }
 }
 
