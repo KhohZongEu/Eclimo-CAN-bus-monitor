@@ -4,10 +4,10 @@
 #include <FirebaseClient.h>
 #include <WiFiClientSecure.h>
 
-#define WIFI_SSID "Nemo5"
-#define WIFI_PASSWORD "Nem0123456789"
+#define WIFI_SSID "YOUR_WIFI_NAME"
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
 
-#define DATABASE_URL "https://habit-chair-default-rtdb.asia-southeast1.firebasedatabase.app"
+#define DATABASE_URL "YOUR_DATABASE_URL"
 
 WiFiClientSecure ssl;
 DefaultNetwork network;
